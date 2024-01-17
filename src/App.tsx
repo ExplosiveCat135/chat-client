@@ -35,11 +35,11 @@ import React from "react";
 // );
 
 const httpLink = new HttpLink({
-  uri: 'http://ec2-52-64-23-106.ap-southeast-2.compute.amazonaws.com:4000/graphql'
+  uri: 'https://ec2-13-210-105-55.ap-southeast-2.compute.amazonaws.com:4000/graphql'
 });
 
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://ec2-52-64-23-106.ap-southeast-2.compute.amazonaws.com:4000/graphql',
+  url: 'wss://ec2-13-210-105-55.ap-southeast-2.compute.amazonaws.com:4000/graphql',
 }));
 
 // The split function takes three parameters:
