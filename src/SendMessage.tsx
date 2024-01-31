@@ -2,6 +2,10 @@ import { useState, FC } from "react";
 import { gql, useMutation } from "@apollo/client";
 // import { ApolloClient } from "@apollo/client";
 import React from "react";
+import Button from '@mui/joy/Button';
+import Input from '@mui/joy/Input';
+import Grid from '@mui/joy/Grid';
+import Box from '@mui/system/Box';
 
 const SEND_MESSAGE = gql`
   mutation createChat($username: String!, $message: String!) {
@@ -32,8 +36,23 @@ const SendMessage: FC<SendMessageProps> = ({ username }) => {
 
   return (
     <div>
-      <input type="text" id="message" value={input} onChange={(e) => setInput(e.target.value)}></input>
-      <button onClick={handleSend}>Send message</button>
+      <Grid container spacing={2} sx={{ flexGrow: 1 }}>
+        <Grid xs={10}>
+          <Input
+            color="primary"
+            disabled={false}
+            placeholder="Enter Message"
+            size="md"
+            variant="soft"
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
+            id="message"
+          />
+        </Grid>
+        <Grid xs={2}>
+          <Button variant="solid" onClick={handleSend}>Send Message</Button>
+        </Grid>
+      </Grid>
     </div>
   );
 };
