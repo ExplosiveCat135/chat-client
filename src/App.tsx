@@ -41,11 +41,11 @@ import Box from '@mui/system/Box';
 // );
 
 const httpLink = new HttpLink({
-  uri: 'https://ec2-13-210-105-55.ap-southeast-2.compute.amazonaws.com/graphql'
+  uri: 'https://ec2-13-236-6-224.ap-southeast-2.compute.amazonaws.com/graphql'
 });
 
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'wss://ec2-13-210-105-55.ap-southeast-2.compute.amazonaws.com/graphql',
+  url: 'wss://ec2-13-236-6-224.ap-southeast-2.compute.amazonaws.com/graphql',
 }));
 
 // The split function takes three parameters:
